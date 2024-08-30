@@ -5,7 +5,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>Potree Viewer</title>
+	<title>SiRVA VISION</title>
 
 	<link rel="stylesheet" type="text/css" href="../build/potree/potree.css">
 	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
@@ -39,7 +39,6 @@
 	</div>
 	
 	<script type="module">
-
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
 		viewer.setEDLEnabled(false);
@@ -58,7 +57,7 @@
 		});
 		
 		// Load and add point cloud to scene
-		Potree.loadPointCloud("../pointclouds/vol_total/cloud.js", "sigeom.sa", e => {
+		Potree.loadPointCloud("../pointclouds/vol_total/cloud.js", "mainPointCloud", e => {
 			let scene = viewer.scene;
 			let pointcloud = e.pointcloud;
 			
@@ -70,14 +69,8 @@
 			scene.addPointCloud(pointcloud);
 			
 			viewer.fitToScreen();
-			// scene.view.setView(
-			// 	[589974.341, 231698.397, 986.146],
-			// 	[589851.587, 231428.213, 715.634],
-			// );
 		});
 
 	</script>
-	
-	
   </body>
 </html>
