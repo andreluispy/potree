@@ -64,8 +64,9 @@
 			
 			let material = pointcloud.material;
 			material.size = 1;
-			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+			material.pointSizeType = Potree.PointSizeType.ATTENUATED;
 			material.shape = Potree.PointShape.SQUARE;
+			pointcloud.rotateX(+Math.PI / 2); // Rotaciona 90 graus em torno do eixo X
 			
 			scene.addPointCloud(pointcloud);
 			
